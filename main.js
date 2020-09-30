@@ -1,4 +1,6 @@
-import ff from "https://fastframework.ga/ff.js";
+import ff from "./ff.js";
+
+/* import ff from "https://fastframework.ga/ff.js"; */
 
 ff.activateShortcuts();
 
@@ -65,6 +67,7 @@ ff.routes = {
   route6: {
     name: "writeups/xss",
     action: function() {
+      $("myViews").innerHTML = ff.customTags.myMenu + writeups;
       $("#writeupsContainer").innerHTML += `<xss-1>route="./blogEntries/xss/"</xss-1>`;
       ff.getCustomTags();
     }
