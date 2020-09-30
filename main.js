@@ -27,6 +27,9 @@ The last change is this page.`;
 var about = `<h1>About!</h1>
 This work is made by <a href="#stringmanolo">String Manolo</a>.`;
 
+var menuXss = `<h2>XSS</h2>
+<a href="#writeups/xss/xss1">XSS mi fallo de seguridad favorito.</a>
+<a href="#writeups/xss/xss2">Ejemplo de texto</a>`;
 
 ff.routes = {
   route1: {
@@ -68,12 +71,19 @@ ff.routes = {
     name: "writeups/xss",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + writeups;
-      $("#writeupsContainer").innerHTML += `<xss-1>route="./blogEntries/xss/"</xss-1>`;
+      $("#writeupsContainer").innerHTML += menuXss;
+    }
+  },
+
+  route7: {
+    name: "writeups/xss/xss1",
+    action: function() {
+      $("myViews").innerHTML = `<xss-1>route="./blogEntries/xss/"</xss-1>`;
       ff.getCustomTags();
     }
   },
 
-  amount: 6,
+  amount: 7,
 
   routeDefault: {
     name: "default",
