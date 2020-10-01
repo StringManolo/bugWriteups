@@ -46,6 +46,20 @@ myViews {
 }
 
 
-#xss {
+.xss {
   font-size: 3em;
+  text-align: left;
+  width: 100%;
+  padding: 2% 1% 2% 1%;
+}
+
+.xssReport {
+  background-color: #fafafa;
+  color: #111;
+  word-wrap: break-word;
+  padding: 1% 1% 1% 1%;
+  margin: 3% 3% 3% 4%;
+  height: 600px;
+  overflow-y: scroll;
+  border: solid 3px #000;
 }
