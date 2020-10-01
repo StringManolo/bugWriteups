@@ -2,7 +2,7 @@
 <h5>Report i made a year ago to a website where i found 3 bugs.
 CSRF, Predictable Password and Reflected XSS.</h5>
 <p>I love this chainable bugs, where you're unable to do much with one of them, but you become a serial killer whith 2 or more together. Here is the orginal report a bit edited in case you want to take a look.</p>
-<div class="xssReport">
+<div class="xssReport" contentEditable="true">
 <p>Security report for https://example.com at 27 november, 04:32 (Spain).</p>
 
 <p>Reflected XSS at //www.example.com/register.php HTTP POST method at date1 & date2 parameters.</p>
