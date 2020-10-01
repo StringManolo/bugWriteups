@@ -1,15 +1,15 @@
 body {
   margin: 0 0 0 0;
   padding: 4px 40px 4px 40px;
-  width: 1024px;
-  height: 720px;
+  /*width: 1024px;
+  height: 720px;*/
   text-size-adjust: none;
   background-color: snow;
   text-rendering: optimizeLegibility;
 }
 
 #center {
-  width: 1024px;
+  /*width: 1024px;*/
   text-align: center;
   border-bottom: solid 1px #000;
 }
@@ -42,8 +42,8 @@ custom-tag1 {
 }
 
 myViews {
-  width: 1024px;
-  height: 720px;
+  /*width: 1024px;
+  height: 720px;*/
   font-size: 25px;
 }
 
