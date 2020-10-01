@@ -1,4 +1,5 @@
 <list>
+<li>Media queries to reduce font-size landscape</li>
 <li>text-rendering: optimizeLegibility;</li>
 <li>Testing visited link color</li>
 <li>More content into xss writups</li>
