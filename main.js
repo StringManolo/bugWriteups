@@ -29,13 +29,18 @@ This work is made by <a href="#stringmanolo">String Manolo</a>.`;
 
 var menuXss = `<h2>XSS</h2>
 <a class="xssLink" href="#writeups/xss/xss1">3 x 1!</a>
+<br />
 <a class="xssLink" href="#writeups/xss/xss2">Ejemplo de texto</a>`;
+
+var four04 = `<h1>404</h1>
+The requested url was not found.`;
 
 ff.routes = {
   route1: {
     name: "home",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + home;
+      $("#nonCenter").innerHTML = "";
     }
   },
 
@@ -43,6 +48,7 @@ ff.routes = {
     name: "writeups",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + writeups;
+      $("#nonCenter").innerHTML = "";
     }
   },
 
@@ -50,6 +56,7 @@ ff.routes = {
     name: "updates",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + updates;
+      $("#nonCenter").innerHTML = "";
     }
   },
 
@@ -57,6 +64,7 @@ ff.routes = {
     name: "about",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + about;
+      $("#nonCenter").innerHTML = "";
     }
   },
 
@@ -71,7 +79,10 @@ ff.routes = {
     name: "writeups/xss",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + writeups;
+      /*
       $("#writeupsContainer").innerHTML += menuXss;
+      */
+      $("#nonCenter").innerHTML = menuXss;
     }
   },
 
@@ -79,6 +90,7 @@ ff.routes = {
     name: "writeups/xss/xss1",
     action: function() {
       $("myViews").innerHTML = `<xss-1>route="./blogEntries/xss/"</xss-1>`;
+      $("#nonCenter").innerHTML = "";
       ff.getCustomTags();
     }
   },
@@ -88,7 +100,8 @@ ff.routes = {
   routeDefault: {
     name: "default",
     action: function() {
-      $("myViews").innerHTML = ff.customTags.myMenu;
+      $("myViews").innerHTML = ff.customTags.myMenu + four04;
+      $("#nonCenter").innerHTML = "";
     }
   }
 };
