@@ -1,7 +1,10 @@
 <list>
+<li>text-rendering: optimizeLegibility;</li>
+<li>Testing visited link color</li>
+<li>More content into xss writups</li>
 <li>Changed view colors to orangeRed</li>
 <li>Created logshistory.ff file</li>
-<li>Testing principal views colors.</li>
+<li>Testing principal views colors</li>
 <li>Add 404 page to default routes</li>
 </list>
 

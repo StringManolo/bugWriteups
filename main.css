@@ -5,6 +5,7 @@ body {
   height: 720px;
   text-size-adjust: none;
   background-color: snow;
+  text-rendering: optimizeLegibility;
 }
 
 #center {
@@ -20,7 +21,7 @@ myViews a {
 }
 
 myViews a:visited {
-  color: #000;
+  color: #644;
 }
 
 myViews a:active {
@@ -51,26 +52,36 @@ myViews {
   font-size: 3em;
   text-align: left;
   width: 100%;
-  padding: 2% 1% 2% 1%;
+  padding: 2% 0 2% 1%;
+  color: #443;
+  background-color: #fff;
+  font-family: "Constantia", "Times New Roman", "Georgia", "Palatino", serif;
+}
+
+.xss p {
+  color: #555555;
+  font-style: verdana, georgia, serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: .05em;
+  line-height: 1.5em;
 }
 
 .xssReport {
   background-color: #eee;
   word-wrap: break-word;
   padding: 1% 1% 1% 1%;
-  margin: 3% 3% 3% 4%;
+  margin: 4% 3% 7% 4%;
   height: 600px;
   overflow-y: scroll;
   border: solid 3px #000;
 }
 
 #writeupsContainer .xssLink {
-  color: #666;
+  color: #664;
   text-decoration: underline; 
-}
-
-#writepsContainer {
-  display: flex;
 }
 
 #nonCenter {
@@ -86,4 +97,8 @@ myViews {
 
 #nonCenter > h2 {
   color: #777;
+}
+
+#xss a {
+  text-decoration: underline;
 }
