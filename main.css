@@ -16,7 +16,7 @@ body {
 myViews a {
   display: inline-block;
   text-decoration: none;
-  color: deepSkyBlue;
+  color: orangeRed;
 }
 
 myViews a:visited {
@@ -79,7 +79,7 @@ myViews {
 
 #nonCenter a {
   display: inline-block;
-  margin: 0 0 2% 0;
+  margin: 0 0 3% 0;
   text-decoration: none;
   border-bottom: dotted 1px blue;
 }

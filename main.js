@@ -22,7 +22,7 @@ Enjoy my discovers!
 </div>`;
 
 var updates = `<h1>Updates!</h1>
-The last change is this page.`;
+Last changes!`;
 
 var about = `<h1>About!</h1>
 This work is made by <a href="#stringmanolo">String Manolo</a>.`;
@@ -56,7 +56,8 @@ ff.routes = {
     name: "updates",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + updates;
-      $("#nonCenter").innerHTML = "";
+      $("#nonCenter").innerHTML = `<history-logs>route="./logs/dev/"</history-logs>`;
+      ff.getCustomTags();
     }
   },
 
