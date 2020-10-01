@@ -105,6 +105,10 @@ myViews {
 }
 
 @media (min-width: 0px) and (orientation:landscape) {
+  body {
+    width: 96%;
+  }
+
   .xss {
     font-size: 0.9em;
   }
