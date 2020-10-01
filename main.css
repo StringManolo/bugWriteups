@@ -63,3 +63,12 @@ myViews {
   overflow-y: scroll;
   border: solid 3px #000;
 }
+
+#writeupsContainer .xssLink {
+  color: orangeRed;
+  text-decoration: underline;
+}
+
+#writepsContainer {
+  display: flex;
+}

@@ -15,9 +15,9 @@ var home = `<h1>Welcome!</h1>
 Welcome to my page`;
 
 var writeups = `<div id="writeupsContainer">
-<h1>Writups!</h1>
+<h1>Writeups!</h1>
 Enjoy my discovers!
-<a href="#writeups/xss">XSS</a>
+<a class="xssLink" href="#writeups/xss">XSS</a>
 <a href="#writeups/csrf">CSRF</a>
 </div>`;
 
@@ -28,8 +28,8 @@ var about = `<h1>About!</h1>
 This work is made by <a href="#stringmanolo">String Manolo</a>.`;
 
 var menuXss = `<h2>XSS</h2>
-<a href="#writeups/xss/xss1">XSS mi fallo de seguridad favorito.</a>
-<a href="#writeups/xss/xss2">Ejemplo de texto</a>`;
+<a class="xssLink" href="#writeups/xss/xss1">3 x 1!</a>
+<a class="xssLink" href="#writeups/xss/xss2">Ejemplo de texto</a>`;
 
 ff.routes = {
   route1: {
