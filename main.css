@@ -161,6 +161,10 @@ myViews {
     width: 80%;
   }
 
+  #w3schoolsPayload {
+    width: 70%;
+  }
+
   .xss, .csrf {
     font-size: 0.9em;
   }
