@@ -150,6 +150,10 @@ myViews {
   width: 80%;
 }
 
+history-logs {
+  font-size: 0.7em;
+}
+
 @media (min-width: 0px) and (orientation:landscape) {
 
   #w3schoolsImagePortrait {
@@ -177,5 +181,6 @@ myViews {
   .xss h4, .csrf h4 {
     font-size: 1.3em;
   }
+
 }
 
