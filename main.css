@@ -42,7 +42,7 @@ custom-tag1 {
 
 #mainMenu a {
   margin: 0 20px 0 20px;
-  font-size: 40px;
+  font-size: 1.1em;
 }
 
 myViews {
@@ -51,9 +51,8 @@ myViews {
   font-size: 25px;
 }
 
-
-.xss {
-  font-size: 3em;
+.xss, .csrf {
+  font-size: 2em;
   text-align: left;
   width: 100%;
   padding: 2% 0 2% 1%;
@@ -62,7 +61,7 @@ myViews {
   font-family: "Constantia", "Times New Roman", "Georgia", "Palatino", serif;
 }
 
-.xss p {
+.xss p, .csrf p {
   color: #555;
   font-style: verdana, georgia, serif;
   -moz-osx-font-smoothing: grayscale;
@@ -74,18 +73,17 @@ myViews {
   font-size: 0.8em; 
 }
 
-.xssReport {
+.xssReport, .csrfReport {
   background-color: #eee;
   word-wrap: break-word;
   padding: 1% 1% 1% 1%;
-  margin: 4% 3% 7% 4%;
+  margin: 4% 3% 5% 4%;
   height: 600px;
   overflow-y: scroll;
   border: solid 3px #000;
 }
 
-#writeupsContainer .xssLink {
-  color: #664;
+#writeupsContainer a {
   text-decoration: underline;
 }
 
@@ -101,6 +99,8 @@ myViews {
 }
 
 #nonCenter > h2 {
+  padding: 1% 0 0 0;
+  margin: 1% 0 0 0;
   color: #777;
 }
 
@@ -108,22 +108,40 @@ myViews {
   font-size: 0.75em;
 }
 
-#xss a {
+#xss a, #csrf a, .xss a, .csrf a {
   text-decoration: underline;
+}
+
+.fastframeworkCode {
+ color: green;
+ font-family: 'Monaco', monospace;
+ white-space: pre-wrap;
+}
+
+#jexIframe {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  border: none;
+}
+
+.aToBlock {
+  display: block;
 }
 
 @media (min-width: 0px) and (orientation:landscape) {
 
-  .xss {
+  .xss, .csrf {
     font-size: 0.9em;
   }
 
-  .xss h1 {
+  .xss h1, .csrf h1 {
     font-size: 1.5em;
     font-family: arial;
   }
 
-  .xss h4 {
+  .xss h4, .csrf h4 {
     font-size: 1.3em;
   }
 }
+

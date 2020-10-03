@@ -25,12 +25,15 @@ var updates = `<h1>Updates!</h1>
 Last changes!`;
 
 var about = `<h1>About!</h1>
-This work is made by <a href="#stringmanolo">String Manolo</a>.`;
+Know about <a href="#stringmanolo">String Manolo</a>.`;
 
 var menuXss = `<h2>XSS</h2>
 <a class="xssLink" href="#writeups/xss/xss1">3 x 1!</a>
 <br />
-<a class="xssLink" href="#writeups/xss/xss2">Ejemplo de texto</a>`;
+<a class="xssLink" href="#writeups/xss/w3schoolsxss1">Stored XSS - W3schools</a>`;
+
+var menuCsrf = `<h2>CSRF</h2>
+<a class="csrfLink" href="#writeups/csrf/w3schoolscsrf1">Logout CSRF - W3schools</a>`;
 
 var four04 = `<h1>404</h1>
 The requested url was not found.`;
@@ -72,7 +75,11 @@ ff.routes = {
   route5: {
     name: "stringmanolo",
     action: function() { 
-      alert("Github: https://github.com/stringmanolo");
+      $("myViews").innerHTML = ff.customTags.myMenu + about;
+      $("#nonCenter").innerHTML = `<a href="#projects">Projects</a>
+      <a href="//github.com/stringmanolo">Github</a>
+      <a href="//twitter.com/xsstringmanolo">Twitter</a>
+      <a href="//stringmanolo.ga">Webpage</a>`
     }
   },
 
@@ -96,7 +103,63 @@ ff.routes = {
     }
   },
 
-  amount: 7,
+  route8: {
+    name: "writeups/xss/w3schoolsxss1",
+    action: function() {
+      $("myViews").innerHTML = `<w3schoolsxss-1>route="./blogEntries/xss/"</w3schoolsxss-1>`;
+      $("#nonCenter").innerHTML = "";
+      ff.getCustomTags();
+    }
+  },
+
+  route9: {
+    name: "writeups/csrf",
+    action: function() {
+      $("myViews").innerHTML = ff.customTags.myMenu + writeups;
+      $("#nonCenter").innerHTML = menuCsrf;
+    }
+  },
+
+  route10: {
+    name: "writeups/csrf/w3schoolscsrf1",
+    action: function() {
+      $("myViews").innerHTML = `<w3schoolscsrf-1>route="./blogEntries/csrf/"</w3schoolscsrf-1>`;
+      $("#nonCenter").innerHTML = "";
+      ff.getCustomTags();    
+    }
+  },
+
+  route11: {
+    name: "projects",
+    action: function() {
+      $("myViews").innerHTML = ff.customTags.myMenu + about;
+      $("#nonCenter").innerHTML = `<div class="aToBlock"><a href="#projects/fastframework">FastFramework</a>
+      <a href="#projects/jex">Jex</a></div>
+      `;
+    }
+  },
+
+  route12: {
+    name: "projects/fastframework",
+    action: function() {
+      $("myViews").innerHTML = "";
+      $("#nonCenter").innerHTML = `<fast-framework>route="./projects/fastframework/"</fast-framework>
+
+      Actually this webpage is build using fastframework :)`;
+     ff.getCustomTags();
+    }
+  },
+
+  route13: {
+    name: "projects/jex",
+    action: function() {
+      $("myViews").innerHTML = "";
+      $("#nonCenter").innerHTML = `<j-ex>route="./projects/jex/"</j-ex>`;
+      ff.getCustomTags();
+    }
+  },
+
+  amount: 13,
 
   routeDefault: {
     name: "default",
