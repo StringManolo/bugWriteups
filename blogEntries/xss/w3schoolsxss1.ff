@@ -26,7 +26,7 @@
 In case it's a "feature", should be removed anyways. I'm sure there is a lot of ways to use this vulnerability to damage the website and the users. </p></div>
 
 This is the payload:
-<div class="imagesParent"><img alt="inserted payload" class="images" src="./resources/w3schoolspayload.png"></div>
+<div class="imagesParent"><img id="w3schoolsPayload" alt="inserted payload" class="images" src="./resources/w3schoolspayload.png"></div>
 
 <p>The bug was totally a low hanging fruit.</p>
 <p>I found another bug at w3schools 30 mins after. You can read <a href="#writeups/csrf/w3schoolscsrf1">w3schools csrf logout</a></p>
