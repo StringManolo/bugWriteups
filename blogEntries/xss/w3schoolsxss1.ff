@@ -2,7 +2,7 @@
 <h4>Report made 1 oct, 2020 to mypage.w3schools.com where i found 2 bugs.
 <a href="#writeups/csrf">Logout CSRF</a>, and <a href="#writeups/xss">Stored XSS</a>.</h4>
 
-<img alt="Alert box prompted from w3schools.com" src="./resources/w3schoolsxss">
+<img alt="Alert box prompted from w3schools.com" src="./resources/w3schoolsxss.png">
 
 <p>I found this stored XSS bug testing w3schools security. Just made an account following the login link in the main domain. Here is the original report in case you want to take a look.</p>
 
@@ -25,7 +25,7 @@
 In case it's a "feature", should be removed anyways. I'm sure there is a lot of ways to use this vulnerability to damage the website and the users. </p></div>
 
 This is the payload:
-<img src="./resources/w3schoolspayload">
+<img src="./resources/w3schoolspayload.png">
 
 <p>The bug was totally a low hanging fruit.</p>
 <p>I found another bug at w3schools 30 mins after. You can read <a href="#writeups/csrf/w3schoolscsrf1">w3schools csrf logout</a></p>
