@@ -162,11 +162,11 @@ history-logs {
 
   #w3schoolsImageLandscape {
     display: inline-block;
-    width: 60%;
+    width: 55%;
   }
 
   #w3schoolsPayload {
-    width: 40%;
+    width: 35%;
   }
 
   .xss, .csrf {
