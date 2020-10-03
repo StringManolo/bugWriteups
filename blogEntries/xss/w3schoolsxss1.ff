@@ -2,7 +2,8 @@
 <h4>Report made 1 oct, 2020 to mypage.w3schools.com where i found 2 bugs.
 <a href="#writeups/csrf">Logout CSRF</a>, and <a href="#writeups/xss">Stored XSS</a>.</h4>
 
-<div class="imagesParent"><img class="images" alt="Alert box prompted from w3schools.com" src="./resources/w3schoolsxss.png"></div>
+<div class="imagesParent"><img id="w3schoolsImageLandscape" class="images" alt="Alert box prompted from w3schools.com" src="./resources/w3schoolsxsslandscape.png">
+<img class="images" id="w3schoolsImagePortrait"  alt="Alert box prompted from w3schools.com" src="./resources/w3schoolsxss.png"></div>
 
 <p>I found this stored XSS bug testing w3schools security. Just made an account following the login link in the main domain. Here is the original report in case you want to take a look.</p>
 

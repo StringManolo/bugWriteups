@@ -137,7 +137,25 @@ myViews {
   text-align: center;
 }
 
+#w3schoolsImageLandscape {
+  display: none;
+  width: 80%;
+}
+
+#w3schoolsImagePortrait {
+  display: inline-block;
+}
+
 @media (min-width: 0px) and (orientation:landscape) {
+
+  #w3schoolsImagePortrait {
+    display: none;
+  }
+
+  #w3schoolsImageLandscape {
+    display: inline-block;
+    width: 80%;
+  }
 
   .xss, .csrf {
     font-size: 0.9em;
