@@ -59,8 +59,9 @@ Use your code from the callback.</p>
       }      
     }
 
-    GET(
-"https://raw.githubusercontent.com/StringManolo/ff/master/json/ff.json", function(resp, ff, ff2, fBody) {
+    GET("https://raw.githubusercontent.com" + 
+    "/StringManolo/ff/master/json/ff.json",
+    function(resp, ff, ff2, fBody) {
       ff2  = JSON.parse(resp);
       fBody = ff2.match(/function[^{]+\{([\s\S]*)\}$/)[1];
       ff = new Function([], fBody);
