@@ -154,6 +154,13 @@ history-logs {
   font-size: 0.7em;
 }
 
+.donotshow {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+}
+
 @media (min-width: 0px) and (orientation:landscape) {
 
   #w3schoolsImagePortrait {
