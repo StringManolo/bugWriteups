@@ -66,7 +66,7 @@ alert("Cache deleted sucesfull");
   } else { 
 alert("No localStorage set."); 
     navigator.serviceWorker.register(swName, {
-      scope: './'
+      scope: '/'
     })
     .then(function(reg) {
       caches.open("cachev1")
