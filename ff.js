@@ -73,10 +73,10 @@ alert(swName);
 alert("Register worked");
       caches.open("cachev1")
       .then(function(cache) {
-alert("Cache openn");
-try{
+alert("Cache opennn");
+alert(ff.cache.resources);
+
         cache.addAll(ff.cache.resources)
-}catch(err) { alert(err) }
         .then(function() {
 alert("Setting new cacheTTL");
 	  localStorage.cacheTTL = +(new Date().getTime()) + +ttl;
