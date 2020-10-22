@@ -67,9 +67,10 @@ alert("Cache deleted sucesfull");
 alert("No localStorage set.");
 alert(swName);
     navigator.serviceWorker.register(swName, {
-      scope: '/'
+      scope: './'
     })
     .then(function(reg) {
+alert("Register worked");
       caches.open("cachev1")
       .then(function(cache) { 
         cache.addAll(ff.cache.resources)
