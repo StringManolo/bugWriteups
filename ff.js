@@ -64,7 +64,8 @@ alert("Cache deleted sucesfull");
       });
     } 
   } else { 
-alert("No localStorage set."); 
+alert("No localStorage set.");
+alert(swName);
     navigator.serviceWorker.register(swName, {
       scope: '/'
     })
