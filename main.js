@@ -187,3 +187,21 @@ ff.mustache.date = ""+new Date();
 ff.getUnknownTags();
 ff.getCustomTags();
 ff.getMustacheSintax();
+
+ff.cache.resources = [
+"./logs/dev/historylogs.ff",
+"./blogEntries/xss/xss1.ff",
+"./blogEntries/xss/w3schoolsxss1.ff",
+"./blogEntries/csrf/w3schoolscsrf1.ff",
+"./projects/fastframework/fastframework.ff",
+"./projects/jex/jex.ff",
+"./ff.js",
+"./main.js",
+"./main.css",
+"./index.html",
+"./resources/w3schoolspayload.png",
+"./resources/w3schoolsxsslanscape.png",
+"./resources/w3schoolsxss.png"];
+ff.cache.start("./cache.js", 604800000); 
+/* 604800000 milliseconds equals 1 week */
+

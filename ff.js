@@ -1,6 +1,6 @@
 var ff = {};
 
-/* Shortcuts code */
+/*** Shortcuts code */
 ff.defineShortcut = function(key, value) {
 
   var DEFINE = function(constant, value) {
@@ -37,6 +37,45 @@ ff.activateShortcuts = function() {
 /* End Shortcuts Code ***/
 
 
+
+/*** Cache Service Workers Code */
+ff.cache = {}
+ff.cache.resources = [];
+
+ff.cache.start = function(swName, ttl) {
+  let tl = 0; 
+  tl = localStorage.cacheTTL;
+  if (+tl) {
+    const now = new Date();
+    if (now.getTime() > +localStorage.cacheTTL) {
+      localStorage.cacheTTL = 0;
+      caches.delete("cachev1").then(function() {
+      });
+    } 
+  } else {
+    navigator.serviceWorker.register(swName, {
+      scope: './'
+    })
+    .then(function(reg) {
+      caches.open("cachev1")
+      .then(function(cache) { 
+        cache.addAll(ff.cache.resources)
+        .then(function() {
+	  localStorage.cacheTTL = +(new Date().getTime()) + +ttl;
+        });
+      });
+    })
+    .catch(function(err) {
+    }); 
+  } 
+};
+
+ff.cache.clean = function() {
+  caches.delete("cachev1").then(function() { 
+
+  });
+};
+/* End Cache Service Workers Code ***/
 
 
 
@@ -83,13 +122,11 @@ ff.router.start = function() {
     changeRoute(e);
   });
 };
-/* End Router Code */
+/* End Router Code ***/
 
 
 
-
-
-/* Mustache Sintax */
+/*** Mustache Sintax */
 ff.mustache = {};
 ff.getMustacheSintax = function() {
 
@@ -153,9 +190,6 @@ ff.getMustacheSintax = function() {
 
 
 
-
-
-
 /*** Unknown Tags Code */
 ff.getUnknownTags = function() {
   var unknownTags = {};
@@ -191,6 +225,7 @@ ff.getUnknownTags = function() {
 /* End Unknown Tags Code ***/
 
 
+
 /*** Utils Code */
 ff._GET = function(url, callback) {
   var peticion = new XMLHttpRequest();
@@ -207,6 +242,8 @@ ff._GET = function(url, callback) {
 /* End Utils Code ***/
 
 
+
+/*** Private Methods. */
 ff._insertHTML = function(element, attribute, code) {  
   element[attribute] = code;  
   var scripts = element.querySelectorAll("script");   
@@ -214,6 +251,7 @@ ff._insertHTML = function(element, attribute, code) {
     eval(scripts[i].text);  
   }
 }  
+
 
 
 /*** Custom Tags Code */
@@ -252,8 +290,6 @@ ff.getCustomTags = function() {
   });
 }
 /* End Custom Tags Code ***/
-
-
 
 
 
