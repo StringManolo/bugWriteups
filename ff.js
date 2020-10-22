@@ -72,9 +72,11 @@ alert(swName);
     .then(function(reg) {
 alert("Register worked");
       caches.open("cachev1")
-      .then(function(cache) { 
+      .then(function(cache) {
+alert("Cache open");
         cache.addAll(ff.cache.resources)
         .then(function() {
+alert("Setting new cacheTTL");
 	  localStorage.cacheTTL = +(new Date().getTime()) + +ttl;
 alert(`New cache stored with ${(localStorage.cacheTTL - new Date().getTime()) / 1000} seconds to live`); 
         });
