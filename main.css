@@ -1,6 +1,6 @@
 body {
   margin: 0 0 0 0;
-  padding: 4px 40px 4px 40px;
+  padding: 4px 5vw 4px 5vw;
   /*width: 1024px;
   height: 720px;*/
   text-size-adjust: none;
@@ -36,23 +36,36 @@ custom-tag1 {
   color: red;
 }
 
+history-logs {
+  margin-top: 3%;
+  font-size: 20px;
+  font-size: 2.6vw;
+}
+
+.ncIndicator {
+  font-size: 40px;
+  font-size: 3.4vw
+}
+
 #mainMenu {
   font-size: 30px;
+  font-size: 3.5vw;
 }
 
 #mainMenu a {
-  margin: 0 20px 0 20px;
-  font-size: 1.1em;
+  margin: 0 2.5vw 0 2.5vw;
 }
 
 myViews {
   /*width: 1024px;
   height: 720px;*/
   font-size: 25px;
+  font-size: 2.7vw;
 }
 
 .xss, .csrf {
   font-size: 2em;
+  font-size: 4.5vw;
   text-align: left;
   width: 100%;
   padding: 2% 0 2% 1%;
@@ -70,7 +83,8 @@ myViews {
   text-rendering: optimizelegibility !important;
   letter-spacing: .05em;
   line-height: 1.5em;
-  font-size: 0.8em; 
+  font-size: 0.8em;
+  font-size: 2.9vw;
 }
 
 .xssReport, .csrfReport {
@@ -78,7 +92,7 @@ myViews {
   word-wrap: break-word;
   padding: 1% 1% 1% 1%;
   margin: 4% 3% 5% 4%;
-  height: 600px;
+  height: auto;
   overflow-y: scroll;
   border: solid 3px #000;
 }
@@ -89,6 +103,7 @@ myViews {
 
 #nonCenter {
   font-size: 2em;
+  font-size: 4.5vw;
 }
 
 #nonCenter a {
@@ -105,7 +120,12 @@ myViews {
 }
 
 #nonCenter > a {
-  font-size: 0.75em;
+  font-size: 1.2em;
+  font-size: 2.6vw;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .center {
@@ -150,10 +170,10 @@ myViews {
 }
 
 #jexIframe {
-  width: 100%;
-  height: 550px;
-  overflow: hidden;
+  height: 50vw;
+  width: 98%;
   border: none;
+  overflow: hidden;
 }
 
 .aToBlock {
@@ -162,6 +182,8 @@ myViews {
 
 .images {
   display: inline-block;
+  height: auto;
+  width: 40%;
 }
 
 .imagesParent {
@@ -183,6 +205,7 @@ myViews {
 
 history-logs {
   font-size: 0.7em;
+  font-size: 1.8vw;
 }
 
 .donotshow {
@@ -209,15 +232,18 @@ history-logs {
 
   .xss, .csrf {
     font-size: 0.9em;
+    font-size: 2.2vw;
   }
 
   .xss h1, .csrf h1 {
     font-size: 1.5em;
+    font-size: 3vw;
     font-family: arial;
   }
 
   .xss h4, .csrf h4 {
     font-size: 1.3em;
+    font-size: 2.7vw;
   }
 
   #aboutPhoto > img {
@@ -237,6 +263,7 @@ history-logs {
   .halfCentered {
     margin-top: 4%;
     font-size: 0.8em;
+    font-size: 2.1vw;
     color: #555;
   }
 
