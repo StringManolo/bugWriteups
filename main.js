@@ -207,7 +207,8 @@ ff.cache.resources = [
 "./resources/w3schoolspayload.png",
 "./resources/w3schoolsxsslanscape.png",
 "./resources/w3schoolsxss.png",
-"./resources/yo.png"];
+"./resources/yo.png",
+"./resources/network.jpg"];
 ff.cache.start("./cache.js", 104800000); 
 /* 604800000 milliseconds equals 1 week */
 
