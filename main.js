@@ -38,6 +38,11 @@ var menuCsrf = `<h2>CSRF</h2>
 var four04 = `<h1>404</h1>
 The requested url was not found.`;
 
+var personalInfo = `<div id="aboutPhoto" class="center"><h6>Web Developer</h6>
+<img src="./resources/yo.png" alt="personal photo">
+<h4>String Manolo</h4></div>
+<p class="halfCenter">I am a self taught Cyber Security Enthusiast and a Software Developer. Born in Galicia - Spain.<br /><br />Currently focused on personal projects to improve my skills while searching for my first job.<br /><br />I love to fix security bugs and make secure and fast performance software,<br /><br />My favourite task is analice javascript code and security of small websites.</p>`;
+
 ff.routes = {
   route1: {
     name: "home",
@@ -68,7 +73,7 @@ ff.routes = {
     name: "about",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + about;
-      $("#nonCenter").innerHTML = "";
+      $("#nonCenter").innerHTML = personalInfo;
     }
   },
 
@@ -79,7 +84,7 @@ ff.routes = {
       $("#nonCenter").innerHTML = `<a href="#projects">Projects</a>
       <a href="//github.com/stringmanolo">Github</a>
       <a href="//twitter.com/xsstringmanolo">Twitter</a>
-      <a href="//stringmanolo.ga">Webpage</a>`
+      <a href="//stringmanolo.ga">Webpage</a>` + personalInfo;
     }
   },
 
@@ -201,7 +206,8 @@ ff.cache.resources = [
 "./index.html",
 "./resources/w3schoolspayload.png",
 "./resources/w3schoolsxsslanscape.png",
-"./resources/w3schoolsxss.png"];
+"./resources/w3schoolsxss.png",
+"./resources/yo.png"];
 ff.cache.start("./cache.js", 104800000); 
 /* 604800000 milliseconds equals 1 week */
 

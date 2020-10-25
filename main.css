@@ -61,7 +61,7 @@ myViews {
   font-family: "Constantia", "Times New Roman", "Georgia", "Palatino", serif;
 }
 
-.xss p, .csrf p {
+.xss p, .csrf p, .halfCentered {
   color: #555;
   font-style: verdana, georgia, serif;
   -moz-osx-font-smoothing: grayscale;
@@ -106,6 +106,33 @@ myViews {
 
 #nonCenter > a {
   font-size: 0.75em;
+}
+
+.center {
+  text-align: center;
+}
+
+.halfCenter {
+  margin: 0 3% 0 5%;
+}
+
+#aboutPhoto {
+  background-color: #00f3ff;
+  border-radius: 1% 1% 1% 1%;
+}
+
+#aboutPhoto > h6 {
+  margin: 2%;
+  padding: 0;
+  padding-top: 10px; 
+}
+
+#aboutPhoto > h4 {
+  padding-bottom: 12px;
+}
+
+#aboutPhoto > img {
+  margin-bottom: 1%;
 }
 
 #xss a, #csrf a, .xss a, .csrf a {
@@ -187,6 +214,26 @@ history-logs {
 
   .xss h4, .csrf h4 {
     font-size: 1.3em;
+  }
+
+  #aboutPhoto > img {
+    height: 30%;
+    width: 30%;
+  }
+  #aboutPhoto > h6 {
+    margin: 2%;
+    padding: 2%;
+
+  }
+
+  #aboutPhoto > h4 {
+    margin: 1%;
+  }
+
+  .halfCentered {
+    margin-top: 4%;
+    font-size: 0.8em;
+    color: #555;
   }
 
 }
