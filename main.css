@@ -1,15 +1,12 @@
 body {
   margin: 0 0 0 0;
   padding: 4px 5vw 4px 5vw;
-  /*width: 1024px;
-  height: 720px;*/
   text-size-adjust: none;
   background-color: #fffefe;
   text-rendering: optimizeLegibility;
 }
 
 #center {
-  /*width: 1024px;*/
   text-align: center;
   border-bottom: solid 1px #000;
 }
@@ -20,11 +17,11 @@ myViews a {
   color: #422;
 }
 
-myViews a:hover {
+myViews a:hover, #crowLinkBack:hover, #crowLinkLanding:hover {
   color: orangeRed;
 }
 
-myViews a:visited {
+myViews a:visited, #crowLinkBack:visited, #crowLinkLanding:visited {
   color: #644;
 }
 
@@ -216,6 +213,53 @@ myViews {
   border-radius: 2% 2% 2% 2%;
   background-image: url("./resources/cybersecurity.jpg");
   background-position: center;
+  background-size: cover;
+}
+
+#four04 {
+  position: absolute;
+  font-size: 30px;
+  font-size: 2.2vw;
+  top: 22%;
+  left: 4%;
+  color: #000;
+}
+
+#crow {
+  margin: -8%;
+  padding: 0 0 0 0;
+  position: relative;
+  height: auto;
+  width: 114%;
+  margin-top: 20%;
+}
+
+#crowLinks {
+  font-size: 5vw;
+}
+
+#crowLinkBack {
+  position: absolute;
+  top: 300%;
+  left: 150%;
+  background: rgba(255,255,255,0.5);
+  text-decoration: none;
+  color: #422;
+  padding: 0 2% 0 2%;
+}
+
+#crowLinkLanding {
+  position: absolute;
+  top: 300%;
+  left: 0;
+  background: rgba(255,255,255,0.5);
+  text-decoration: none;
+  color: #422;
+  padding: 0 2% 0 2%;
+}
+
+#crowLinkBack:active, #crowLinkLanding:active {
+  color: rgba(255,255,255,0.5);
 }
 
 @media (min-width: 0px) and (orientation:landscape) {
@@ -274,6 +318,7 @@ myViews {
     background-image: url("./resources/computer.jpg");
     height: 25vw;
     width: 90vw;
+    background-size: cover;
   }
   
   #landingPage {
@@ -285,5 +330,18 @@ myViews {
     font-size: 4vw;
   }
 
+  #four04 {                                                         font-size: 20px;                                                font-size: 2.1vw;
+    background-color: rgba(255,255,255,0.5);
+    padding: 1%;
+  }
+
+  #crow {
+    margin-top: 0;
+    height: 46vw;
+  }
+
+  #crowLinkLanding, #crowLinkBack {
+    top: 170%;
+  }
 }
 

@@ -11,8 +11,7 @@ ff.activateShortcuts();
 <a href="#about">ABOUT</a></article></section>`
 };
 
-var home = `<h1>Welcome!</h1>
-Welcome to my page`;
+var home = `<h1>General</h1>`;
 
 var writeups = `<div id="writeupsContainer">
 <h1>Writeups!</h1>
@@ -35,8 +34,8 @@ var menuXss = `<h2>XSS</h2>
 var menuCsrf = `<h2>CSRF</h2>
 <a class="csrfLink" href="#writeups/csrf/w3schoolscsrf1">Logout CSRF - W3schools</a>`;
 
-var four04 = `<h1>404</h1>
-The requested url was not found.`;
+var four04 = `<a href="#landing">Landing Page</a>
+<a href="javascript:history.go(-1)">Back</a>`;
 
 var personalInfo = `<div id="aboutPhoto" class="center"><h6>Web Developer</h6>
 <img src="./resources/yo.png" alt="personal photo">
@@ -62,7 +61,13 @@ ff.routes = {
     name: "home",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + home;
-      $("#nonCenter").innerHTML = "";
+      $("#nonCenter").innerHTML = `<ul><li><a href="#securityBugs">Security Bugs</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#pappers">Pappers</a></li>
+<li><a href="#tutorial">Tutorials</a></li>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#development">Development</a></li>
+<li><a href="#fixes">Fixes</a></li></ul>`;
     }
   },
 
@@ -191,8 +196,10 @@ ff.routes = {
   routeDefault: {
     name: "default",
     action: function() {
-      $("myViews").innerHTML = ff.customTags.myMenu + four04;
-      $("#nonCenter").innerHTML = "";
+      $("myViews").innerHTML = "";
+      $("#nonCenter").innerHTML = `<img id="crow" src="./resources/crow.jpg"><div id="four04"><h1>404 PAGE NOT FOUND</h1>The requested resource was not found in this page<div id="crowLinks"><a id="crowLinkLanding" href="#landing">Landing Page</a>
+<a id="crowLinkBack" href="javascript:history.go(-1)">Back</a></div>
+</div>`;
     }
   }
 };
