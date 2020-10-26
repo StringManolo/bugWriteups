@@ -1,7 +1,8 @@
 <list>
+<li>New Landingpage when no hash in url</li>
 <li>New About Section With Personal Info</li>
 <li>Cache Api and Service Worker Improve Speed</li>
-<li>Imaged of the Stored XSS vulnerability</li>
+<li>Image of the Stored XSS vulnerability</li>
 <li>Adding robots.txt, site-map.xml and SEO meta tags</li>
 <li>Adding projects and <em>about</em> social links</li>
 <li>Reducing Android portrait text size</li>

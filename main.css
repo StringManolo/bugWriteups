@@ -4,7 +4,7 @@ body {
   /*width: 1024px;
   height: 720px;*/
   text-size-adjust: none;
-  background-color: #fffdfd;
+  background-color: #fffefe;
   text-rendering: optimizeLegibility;
 }
 
@@ -32,14 +32,11 @@ myViews a:active {
   color: #fff;
 }
 
-custom-tag1 {
-  color: red;
-}
-
 history-logs {
-  margin-top: 3%;
+  margin-top: 1%;
+  margin-left: 12%;
   font-size: 20px;
-  font-size: 2.6vw;
+  font-size: 2.5vw;
 }
 
 .ncIndicator {
@@ -205,16 +202,20 @@ myViews {
   width: 80%;
 }
 
-history-logs {
-  font-size: 0.7em;
-  font-size: 1.8vw;
-}
-
 .donotshow {
   position: absolute;
   left: -9999px;
   width: 1px;
   height: 1px;
+}
+
+#landingPage > header {
+  height: 70vw;
+  width: 90vw;
+  border: solid 1px #000;
+  border-radius: 2% 2% 2% 2%;
+  background-image: url("./resources/cybersecurity.jpg");
+  background-position: center;
 }
 
 @media (min-width: 0px) and (orientation:landscape) {
@@ -267,6 +268,21 @@ history-logs {
     font-size: 0.8em;
     font-size: 2.1vw;
     color: #555;
+  }
+
+  #landingPage > header {
+    background-image: url("./resources/computer.jpg");
+    height: 25vw;
+    width: 90vw;
+  }
+  
+  #landingPage {
+    text-align: center;
+  }
+
+  #landingPage > h1 {
+    font-size: 2em;
+    font-size: 4vw;
   }
 
 }
