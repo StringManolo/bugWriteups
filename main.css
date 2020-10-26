@@ -52,8 +52,6 @@ history-logs {
 }
 
 myViews {
-  /*width: 1024px;
-  height: 720px;*/
   font-size: 25px;
   font-size: 2.7vw;
 }
@@ -259,6 +257,17 @@ myViews {
   text-decoration: none;
   color: #422;
   padding: 0 2% 0 2%;
+}
+
+.githubIcon {
+  height: 20%;
+  width: 20%;
+  padding: 0 0 0 0;
+}
+
+.githubLink {
+  width: 20%;
+  padding: 0 0 0 0;
 }
 
 #crowLinkBack:active, #crowLinkLanding:active {

@@ -101,7 +101,7 @@ ff.routes = {
     action: function() { 
       $("myViews").innerHTML = ff.customTags.myMenu + about;
       $("#nonCenter").innerHTML = `<a href="#projects">Projects</a>
-      <a href="//github.com/stringmanolo">Github</a>
+      <a class="githubLink" href="//github.com/stringmanolo"><img class="githubIcon" src="./resources/github.png"></a>
       <a href="//twitter.com/xsstringmanolo">Twitter</a>
       <a href="//stringmanolo.ga">Webpage</a>` + personalInfo;
     }
