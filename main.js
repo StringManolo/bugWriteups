@@ -223,6 +223,7 @@ ff.getCustomTags();
 ff.getMustacheSintax();
 
 ff.cache.resources = [
+"./",
 "./logs/dev/historylogs.ff",
 "./blogEntries/xss/xss1.ff",
 "./blogEntries/xss/w3schoolsxss1.ff",
