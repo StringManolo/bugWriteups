@@ -100,10 +100,11 @@ ff.routes = {
     name: "stringmanolo",
     action: function() { 
       $("myViews").innerHTML = ff.customTags.myMenu + about;
-      $("#nonCenter").innerHTML = `<a href="#projects"><img class="projectsIcon" src="./resources/projects.png" alt="projects icon"></a>
+      $("#nonCenter").innerHTML = `<div id="icons"><a href="#projects"><img class="projectsIcon" src="./resources/projects.png" alt="projects icon"></a>
       <a class="githubLink" href="//github.com/stringmanolo"><img class="githubIcon" src="./resources/github.png" alt="github icon"></a>
       <a href="//twitter.com/xsstringmanolo"><img class="twitterIcon" src="./resources/twitter.png" alt="twitter icon"></a>
-      <a href="//foro.elhacker.net/profiles/string_manolo-u595084.html"><img class="elhackernetIcon" src="./resources/elhacker.png" alt="icono elhacker.net"></a>` + personalInfo;
+      <a href="//foro.elhacker.net/profiles/string_manolo-u595084.html"><img class="elhackernetIcon" src="./resources/elhacker.png" alt="icono elhacker.net"></a><a href="//t.me/stringmanolo"><img class="telegramIcon" src="./resources/telegram.png" alt="telegram icon"></a>
+      <a href="emailto:manuelvarelacaldas@gmail.com"><img class="emailIcon" src="./resources/email.png" alt="email icon"></a></div>` + personalInfo;
     }
   },
 
@@ -246,6 +247,7 @@ ff.cache.resources = [
 "./resources/github.png",
 "./resources/twitter.png",
 "./resources/elhacker.png",
+"./resources/telegram.png",
 "https://stringmanolo.ga/projects/jex/jex.html"
 ];
 ff.cache.start("./cache.js", 104800000); 

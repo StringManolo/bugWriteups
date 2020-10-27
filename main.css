@@ -100,7 +100,6 @@ myViews {
 }
 
 #nonCenter a {
-  display: inline;
   margin: 0 0 1% 0;
   text-decoration: none;
   border-bottom: dotted 1px blue;
@@ -265,7 +264,8 @@ myViews {
   margin-top: 2%;
 }
 
-.projectsIcon, .twitterIcon, .elhackernetIcon {
+.projectsIcon, .twitterIcon, .elhackernetIcon, .telegramIcon,
+.emailIcon {
   height: 14%;
   width: 14%;
   background-color: #fffdfd;
@@ -275,6 +275,15 @@ myViews {
 .elhackernetIcon {
   height: 15%;
   width: 15%;
+}
+
+.projectsIcon {
+  margin-left: 2%;
+}
+
+#icons > a {
+  display: inline;
+  margin-right: 1%;
 }
 
 #crowLinkBack:active, #crowLinkLanding:active {
