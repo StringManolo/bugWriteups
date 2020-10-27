@@ -103,7 +103,7 @@ ff.routes = {
       $("#nonCenter").innerHTML = `<a href="#projects"><img class="projectsIcon" src="./resources/projects.png" alt="projects icon"></a>
       <a class="githubLink" href="//github.com/stringmanolo"><img class="githubIcon" src="./resources/github.png" alt="github icon"></a>
       <a href="//twitter.com/xsstringmanolo"><img class="twitterIcon" src="./resources/twitter.png" alt="twitter icon"></a>
-      <a href="//stringmanolo.ga">Webpage</a>` + personalInfo;
+      <a href="//foro.elhacker.net/profiles/string_manolo-u595084.html"><img class="elhackernetIcon" src="./resources/elhacker.png" alt="icono elhacker.net"></a>` + personalInfo;
     }
   },
 

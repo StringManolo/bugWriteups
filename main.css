@@ -265,11 +265,16 @@ myViews {
   margin-top: 2%;
 }
 
-.projectsIcon, .twitterIcon {
+.projectsIcon, .twitterIcon, .elhackernetIcon {
   height: 14%;
   width: 14%;
   background-color: #fffdfd;
   margin-top: 2%;
+}
+
+.elhackernetIcon {
+  height: 15%;
+  width: 15%;
 }
 
 #crowLinkBack:active, #crowLinkLanding:active {
