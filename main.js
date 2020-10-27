@@ -249,6 +249,7 @@ ff.cache.resources = [
 "./resources/elhacker.png",
 "./resources/telegram.png",
 "./resources/email.png",
+"https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap",
 "https://stringmanolo.ga/projects/jex/jex.html"
 ];
 ff.cache.start("./cache.js", 104800000); 
