@@ -265,10 +265,11 @@ myViews {
   margin-top: 2%;
 }
 
-.projectsIcon {
+.projectsIcon, .twitterIcon {
   height: 14%;
   width: 14%;
   background-color: #fffdfd;
+  margin-top: 2%;
 }
 
 #crowLinkBack:active, #crowLinkLanding:active {

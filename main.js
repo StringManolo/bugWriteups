@@ -100,9 +100,9 @@ ff.routes = {
     name: "stringmanolo",
     action: function() { 
       $("myViews").innerHTML = ff.customTags.myMenu + about;
-      $("#nonCenter").innerHTML = `<a href="#projects"><img class="projectsIcon" src="./resources/projects.png"></a>
-      <a class="githubLink" href="//github.com/stringmanolo"><img class="githubIcon" src="./resources/github.png"></a>
-      <a href="//twitter.com/xsstringmanolo">Twitter</a>
+      $("#nonCenter").innerHTML = `<a href="#projects"><img class="projectsIcon" src="./resources/projects.png" alt="projects icon"></a>
+      <a class="githubLink" href="//github.com/stringmanolo"><img class="githubIcon" src="./resources/github.png" alt="github icon"></a>
+      <a href="//twitter.com/xsstringmanolo"><img class="twitterIcon" src="./resources/twitter.png" alt="twitter icon"></a>
       <a href="//stringmanolo.ga">Webpage</a>` + personalInfo;
     }
   },
