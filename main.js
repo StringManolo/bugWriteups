@@ -242,7 +242,12 @@ ff.cache.resources = [
 "./resources/computer.jpg",
 "./resources/cybersecurity.jpg",
 "./resources/crow.jpg",
-"https://stringmanolo.ga/projects/jex/jex.html"];
+"./resources/projects.png",
+"./resources/github.png",
+"./resources/twitter.png",
+"./resources/elhacker.png",
+"https://stringmanolo.ga/projects/jex/jex.html"
+];
 ff.cache.start("./cache.js", 104800000); 
 /* 604800000 milliseconds equals 1 week */
 
