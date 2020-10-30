@@ -248,9 +248,7 @@ ff.cache.resources = [
 "./resources/twitter.png",
 "./resources/elhacker.png",
 "./resources/telegram.png",
-"./resources/email.png",
-"https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap",
-"https://stringmanolo.ga/projects/jex/jex.html"
+"./resources/email.png"
 ];
 ff.cache.start("./cache.js", 104800000); 
 /* 604800000 milliseconds equals 1 week */
