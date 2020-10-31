@@ -292,8 +292,8 @@ myViews {
 
 @media (min-width: 0px) and (orientation:landscape) {
 
-  body {
-    font-size: 1vw;
+  html * {
+    font-size: 2.2vw;
   }
 
   #w3schoolsImagePortrait {
@@ -310,25 +310,26 @@ myViews {
   }
 
   .xss, .csrf {
-    font-size: 0.9em;
-    font-size: 1.1vw;
+    /* font-size: 0.9em;
+    font-size: 1.1vw; */
   }
 
   .xss h1, .csrf h1 {
-    font-size: 1.5em;
-    font-size: 1.5vw;
+    /* font-size: 1.5em;
+    font-size: 1.5vw; */
     font-family: arial;
   }
 
   .xss h4, .csrf h4 {
-    font-size: 1.3em;
-    font-size: 1.3vw;
+    /* font-size: 1.3em;
+    font-size: 1.3vw; */
   }
 
   #aboutPhoto > img {
     height: auto;
     width: 30%;
   }
+
   #aboutPhoto > h6 {
     margin: 2%;
     padding: 2%;
@@ -341,8 +342,8 @@ myViews {
 
   .halfCentered {
     margin-top: 4%;
-    font-size: 0.8em;
-    font-size: 1vw;
+    /* font-size: 0.8em;
+    font-size: 1vw; */
     color: #555;
   }
 
@@ -358,11 +359,13 @@ myViews {
   }
 
   #landingPage > h1 {
-    font-size: 2em;
-    font-size: 2vw;
+    /* font-size: 2em;
+    font-size: 2vw; */
   }
 
-  #four04 {                                                         font-size: 20px;                                                font-size: 1.1vw;
+  #four04 {
+    /* font-size: 20px;
+    font-size: 1.1vw; */
   }
 
   #crow {
