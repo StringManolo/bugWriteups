@@ -210,8 +210,8 @@ ff.router.start();
 ff.mustache.copyright = `<div class="copyright">&copy; ${new Date().getFullYear()}</div>
 <style>
 .copyright {
-  bottom: 10px;
-  right: 10px;
+  bottom: 2%;
+  right: 2%;
   position: fixed;
 }
 </style>
