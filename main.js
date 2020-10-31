@@ -40,7 +40,7 @@ var four04 = `<a href="#landing">Landing Page</a>
 var personalInfo = `<div id="aboutPhoto" class="center"><h6>Web Developer</h6>
 <img src="./resources/yo.png" alt="personal photo">
 <h4>String Manolo</h4></div>
-<p class="halfCenter">I am a self taught Cyber Security Enthusiast and a Software Developer. Born in Galicia - Spain.<br /><br />Currently focused on personal projects to improve my skills while searching for my first job.<br /><br />I love to fix security bugs and make secure and fast performance software,<br /><br />My favourite task is analice javascript code and security of small websites.</p>`;
+<p class="halfCenter"><span class="br">I am a self taught Cyber Security Enthusiast and a Software Developer.</span><span class="br">Born in Galicia - Spain.</span><span class="br">Currently focused on personal projects to improve my skills while searching for my first job.</span><span class="br">I love to fix security bugs and make secure and fast performance software,</span><span class="br">My favourite task is analice javascript code and security of small websites.</span></p>`;
 
 var landingPage = `<section id="landingPage">
 <header></header>
@@ -104,7 +104,7 @@ ff.routes = {
       <a class="githubLink" href="//github.com/stringmanolo"><img class="githubIcon" src="./resources/github.png" alt="github icon"></a>
       <a href="//twitter.com/xsstringmanolo"><img class="twitterIcon" src="./resources/twitter.png" alt="twitter icon"></a>
       <a href="//foro.elhacker.net/profiles/string_manolo-u595084.html"><img class="elhackernetIcon" src="./resources/elhacker.png" alt="icono elhacker.net"></a><a href="//t.me/stringmanolo"><img class="telegramIcon" src="./resources/telegram.png" alt="telegram icon"></a>
-      <a href="mailto:manuelvarelacaldas@gmail.com"><img class="emailIcon" src="./resources/email.png" alt="email icon"></a></div>` + personalInfo;
+      <a href="mailto:manuelvarelacaldas@gmail.com"><img class="emailIcon" src="./resources/email.png" alt="email icon"></a></div>`+personalInfo;
     }
   },
 

@@ -67,7 +67,7 @@ myViews {
   font-family: "Constantia", "Times New Roman", "Georgia", "Palatino", serif;
 }
 
-.xss p, .csrf p, .halfCentered {
+.xss p, .csrf p, .halfCenter {
   color: #555;
   font-style: verdana, georgia, serif;
   -moz-osx-font-smoothing: grayscale;
@@ -75,9 +75,13 @@ myViews {
   -moz-font-smoothing: antialiased !important;
   text-rendering: optimizelegibility !important;
   letter-spacing: .05em;
-  line-height: 1.5em;
   font-size: 0.8em;
-  font-size: 2.9vw;
+  font-size: 4vw;
+}
+
+.br {
+  display: block;
+  margin-bottom: 4%;
 }
 
 .xssReport, .csrfReport {
@@ -277,7 +281,7 @@ myViews {
   width: 15%;
 }
 
-.projectsIcon {
+#icons {
   margin-left: 2%;
 }
 
@@ -337,26 +341,49 @@ myViews {
     font-size: 1.3vw; */
   }
 
+  #aboutPhoto {
+    width: 50%;
+  }
+
   #aboutPhoto > img {
     height: auto;
-    width: 30%;
+    width: 15%;
   }
 
   #aboutPhoto > h6 {
     margin: 2%;
     padding: 2%;
-
   }
 
   #aboutPhoto > h4 {
     margin: 1%;
   }
 
-  .halfCentered {
-    margin-top: 4%;
-    /* font-size: 0.8em;
-    font-size: 1vw; */
+  .halfCenter {
+    float: right;
+    vertical-align: top;
+    margin-top: -17%;
+    width: 45%;
     color: #555;
+    font-size: 1.1vw;
+  }
+
+  .br {
+    margin-bottom: 2%;
+  }
+
+  .projectsIcon, .twitterIcon, .elhackernetIcon, .telegramIcon,
+  .emailIcon, .githubIcon {
+    height: 7%;
+    width: 7%; 
+  }
+
+  #icons {
+    margin-left: 5%;
+  }
+
+  #icons > a {
+    margin-right: 9%;
   }
 
   #landingPage > header {
