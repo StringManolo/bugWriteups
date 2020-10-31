@@ -293,19 +293,19 @@ myViews {
 @media (min-width: 0px) and (orientation:landscape) {
 
   body {
-    font-size: 1.4vw;
+    font-size: 1.1vw;
   }
 
   history-logs, myViews, .aToBlock, #four04 {
-    font-size: 1.4vw;
+    font-size: 1.1vw;
   }
 
   .ncIndicator, #mainMenu, .xss p, .csrf p, .halfCentered, #nonCenter > a {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
   }
 
   .xss, .csrf, #nonCenter, #crowLinks {
-    font-size: 2.2vw;
+    font-size: 1.9vw;
   }
 
   #w3schoolsImagePortrait {
