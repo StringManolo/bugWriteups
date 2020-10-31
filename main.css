@@ -292,6 +292,10 @@ myViews {
 
 @media (min-width: 0px) and (orientation:landscape) {
 
+  body {
+    font-size: 1vw;
+  }
+
   #w3schoolsImagePortrait {
     display: none;
   }
