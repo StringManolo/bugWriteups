@@ -301,11 +301,11 @@ myViews {
   }
 
   .ncIndicator, #mainMenu, .xss p, .csrf p, .halfCentered, #nonCenter > a {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
   }
 
   .xss, .csrf, #nonCenter, #crowLinks {
-    font-size: 1.9vw;
+    font-size: 1.6vw;
   }
 
   #w3schoolsImagePortrait {
