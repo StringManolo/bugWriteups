@@ -294,6 +294,10 @@ myViews {
   color: rgba(255,255,255,0.5);
 }
 
+#landingPage {
+  list-style-position: inside;
+}
+
 @media (min-width: 0px) and (orientation:landscape) {
 
   body {
@@ -310,6 +314,14 @@ myViews {
 
   .xss, .csrf, #nonCenter, #crowLinks {
     font-size: 1.6vw;
+  }
+
+  #landingPage > * {
+    text-align: left;
+  }
+
+  #landingPage > ul {
+    padding-left: 15%;
   }
 
   #w3schoolsImagePortrait {
