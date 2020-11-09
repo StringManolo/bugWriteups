@@ -29,7 +29,9 @@ Know about <a href="#stringmanolo">String Manolo</a>.`;
 var menuXss = `<h2>XSS</h2>
 <a class="xssLink" href="#writeups/xss/xss1">3 x 1!</a>
 <br />
-<a class="xssLink" href="#writeups/xss/w3schoolsxss1">Stored XSS - W3schools</a>`;
+<a class="xssLink" href="#writeups/xss/w3schoolsxss1">Stored XSS - W3schools</a>
+<br />
+<a class="xssLink" href="#writeups/xss/intigriti/november">Clickjacking XSS</a>`;
 
 var menuCsrf = `<h2>CSRF</h2>
 <a class="csrfLink" href="#writeups/csrf/w3schoolscsrf1">Logout CSRF - W3schools</a>`;
@@ -138,6 +140,15 @@ ff.routes = {
   },
 
   route9: {
+    name: "writeups/xss/intigriti/november",
+    action: function() {
+      $("myViews").innerHTML = `<novembe-r>route="./blogEntries/xss/intigriti/"</novembe-r>`;
+      $("#nonCenter").innerHTML = "";
+      ff.getCustomTags();
+    }
+  },
+
+  route10: {
     name: "writeups/csrf",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + writeups;
@@ -145,7 +156,7 @@ ff.routes = {
     }
   },
 
-  route10: {
+  route11: {
     name: "writeups/csrf/w3schoolscsrf1",
     action: function() {
       $("myViews").innerHTML = `<w3schoolscsrf-1>route="./blogEntries/csrf/"</w3schoolscsrf-1>`;
@@ -154,7 +165,7 @@ ff.routes = {
     }
   },
 
-  route11: {
+  route12: {
     name: "projects",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu + about;
@@ -164,7 +175,7 @@ ff.routes = {
     }
   },
 
-  route12: {
+  route13: {
     name: "projects/fastframework",
     action: function() {
       $("myViews").innerHTML = "";
@@ -175,7 +186,7 @@ ff.routes = {
     }
   },
 
-  route13: {
+  route14: {
     name: "projects/jex",
     action: function() {
       $("myViews").innerHTML = "";
@@ -184,7 +195,7 @@ ff.routes = {
     }
   },
 
-  route14: {
+  route15: {
     name: "landing",
     action: function() {
       $("myViews").innerHTML = ff.customTags.myMenu;
@@ -192,7 +203,17 @@ ff.routes = {
     }
   },
 
-  amount: 14,
+ /* route16: {
+    name: "securityBugs",
+    action: function() {
+      $("myViews").innerHTML = "";
+      $("#nonCenter").innerHTML = `<xss-series>route="./securityBugs/xss/"</xss-series>`;
+      ff.getCustomTags();
+    }
+  },
+
+  amount: 16, */
+  amount: 15,
 
   routeDefault: {
     name: "default",
